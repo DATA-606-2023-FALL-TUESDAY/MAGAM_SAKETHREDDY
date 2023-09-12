@@ -79,7 +79,8 @@ Each row in the dataset represents a single entity, with specific datasets focus
 - pkatt (float64): The number of penalty kicks attempted by the team.
 - season (int64): The season or time period (assuming it should be of integer data type).
 - team (object): The name of the team.
- "_The data types are based on the information provided and may require further validation depending on the actual content of the dataset. Please note that columns with data type \"object\" typically contain strings or mixed data types, and you may need to perform data type conversions or data cleaning as needed for analysis._"
+
+_The data types are based on the information provided and may require further validation depending on the actual content of the dataset. Please note that columns with data type \"object\" typically contain strings or mixed data types, and you may need to perform data type conversions or data cleaning as needed for analysis._
 ***
 >## _Target and Features_
 
