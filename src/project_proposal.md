@@ -46,7 +46,7 @@ The data cover a time span ranging from the inception of the Premier League in 2
 ### Data Granularity: 
 Each row in the dataset represents a single entity, with specific datasets focusing on different aspects:
 - In the **_Stats_** dataset, each row represents a Premier League team. It includes team names, home stadiums, round, day, venue, result and other team-specific information.
-- In the **_shooting_** dataset, each row represents an individual player who has participated in Premier League matches. It includes player names, shooting percentage and player-specific statistics.
+- In the **_shooting_** dataset, each row represents an individual team shooting percentage and player-specific statistics for the particular game.
 - The **_Matches_** Dataset, it compromises of both these datasets.
 
 ### Data Dictionary:
