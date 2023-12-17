@@ -3,25 +3,27 @@
   <img src="https://github.com/saketh105/saketh/blob/main/Premier-League-logo.png" alt="Premier League Logo" style="width: 600px; height: 300px;">
 </p>
 
+****
 
-## *Prepared for UMBC Data Science Master Degree Capstone under Dr Chaojie (Jay) Wang*
-### Author: Saketh Reddy Magam
-   -  <a href="https://www.linkedin.com/in/michael-whittington-6a099137/"><img align="left" src="https://img.shields.io/badge/-LinkedIn-1E90FF?logo=linkedin&style=flat" alt="icon | LinkedIn"/></a>
-   - <a href="https://github.com/Michael-Whittington"><img align="left" src="https://img.shields.io/badge/-GitHub-181717?logo=github&style=flat" alt="icon | GitHub"/></a>
+> ## *_1. Author and resources_*
+#### Author: Saketh Reddy Magam
+#### Prepared for UMBC Data Science Master Degree Capstone under Dr Chaojie (Jay) Wang
+   -  <a href="https://www.linkedin.com/in/saketh-reddy-magam-9b67bb161/"><img align="left" src="https://img.shields.io/badge/-LinkedIn-1E90FF?logo=linkedin&style=flat" alt="icon | LinkedIn"/></a>
+   - <a href="https://github.com/saketh105"><img align="left" src="https://img.shields.io/badge/-GitHub-181717?logo=github&style=flat" alt="icon | GitHub"/></a>
 
-### Project Resources:
+#### Project Resources:
    -  <a href="https://github.com/DATA-606-2023-FALL-TUESDAY/MAGAM_SAKETHREDDY/edit/main/src/project_proposal.md"><img src="https://img.shields.io/badge/-PowerPoint Presentation-B7472A?logo=microsoftpowerpoint&style=flat" alt="icon | GitHub"/></a>  
    - <a href="https://youtube.com"><img align="left" src="https://img.shields.io/badge/-YouTube-FF0000?logo=youtube&style=flat" alt="icon | YouTube"/></a> 
 ****
-> ## *_Project Focus_*
+> ## *_2. Project Focus_*
 
 The project, _Premier League Match Winners Prediction_, centers around the development of a predictive model for forecasting the winners of matches in the Premier League, one of the most prestigious football (soccer) leagues globally. The primary aim is to leverage data analysis and machine learning techniques to make accurate match predictions.
-### Significance:   
+### 2.a Significance:   
    1. **Enhanced Fan Experience:** Accurate match predictions enhance the fan experience by helping them decide which matches to watch, fostering engagement, and deepening their connection to the sport.
    2. **Data-Driven Insights:** The project provides valuable insights into team performance, player statistics, and trends, benefiting sports analysts and enthusiasts.
    3. **Betting and Gambling:** Match predictions are of interest to individuals involved in sports betting and gambling, as informed decisions can be made based on data-driven forecasts.
 
-### Research Questions:
+### 2.b Research Questions:
 The following research questions guide the project
 - Can historical match data accurately predict the outcomes of future Premier League matches?
 - To what extent can past match data, including team performance, player statistics, and historical trends, inform predictions?
@@ -33,27 +35,27 @@ The following research questions guide the project
 " _By addressing these research questions, the project aims to develop a robust and effective predictive model with practical applications and contribute to the understanding of match winner prediction in the context of the Premier League._"
 ****   
     
->## *_Data Description_*
+>## *_3. Data Description_*
    
-### Data Sources:
+### 3.a Data Sources:
 The dataset for this project is collected from Football Reference Website, which includes Premier League official records,statistics, and historical football databases. It encompasses comprehensive information on Premier League matches, teams, players, and related statistics.
 - website: [Football Reference](https://fbref.com/en/)
 
-### Data Size:
+### 3.b Data Size:
 The dataset consists of two files, one containing team statistics and the other containing shooting statistics that have been combined into a single file based on the individual components. However, as a reference:
 - Total dataset size: Approximately 100KB
-- Data Shape: The dataset is structured in tabular form, with multiple CSV (Comma-Separated Values) files representing different aspects of Premier League matches. The exact number of rows and columns 1598 rows and 27 coloumns.
+- Data Shape: The dataset is structured in tabular form, with multiple CSV (Comma-Separated Values) files representing different aspects of Premier League matches. The exact number of rows and columns *1598 rows and 27 coloumns*.
 
-### Time Period:
+### 3.c Time Period:
 The data cover a time span ranging from the inception of the Premier League in 2021 up to the most recent available season (2023-2024). Therefore, the dataset encompasses a time period spanning several seasons.
 
-### Data Granularity: 
+### 3.d Data Granularity: 
 Each row in the dataset represents a single entity, with specific datasets focusing on different aspects:
 - In the **_Stats_** dataset, each row represents a Premier League team. It includes team names, home stadiums, round, day, venue, result and other team-specific information.
 - In the **_shooting_** dataset, each row represents an individual team shooting percentage and shooting specific statistics for the particular game.
 - The **_Matches_** Dataset, it compromises of both these datasets.
 
-### Data Dictionary:
+### 3.e Data Dictionary:
 **Matches Dataset Columns:**
 | Column Name      | Data Type     | Definition                                              | Example Values                                  |
 |------------------|---------------|---------------------------------------------------------|--------------------------------------------------|
@@ -88,11 +90,54 @@ Each row in the dataset represents a single entity, with specific datasets focus
 
 
 
-_The data types are based on the information provided and may require further validation depending on the actual content of the dataset. Please note that columns with data type \"object\" typically contain strings or mixed data types, and you may need to perform data type conversions or data cleaning as needed for analysis._
-***
->## _Target and Features_
-
+_The data types may require further validation depending on the altercation of the dataset. Please note that columns with data type \"object\" typically contain strings or mixed data types, and may need to perform data type conversions or data cleaning as needed for analysis._
+###Target and Features:
 For our machine learning model, we will typically structure our dataset as follows:
 1. **Target/Label:** The target variable will be a binary classification variable representing the match outcome (e.g., \"Home Team Win\" or \"Away Team Win\").
 2. **Features/Predictors:** Potential features for our machine learning model may include Venue, opponent, time, date, various match-related statistics, performance indicators. The specific choice of features and target variable will be refined during the data preprocessing and model development stages of the project based on their relevance and performance in predicting match outcomes.
 3. ** Machine Learning Models:** The Machine Learning Models will depend on the specific goals and tasks you want to accomplish with your data as we progress through the project.
+***
+>## *_4. Exploratory Data Analysis (EDA)_*
+To comprehend the dataset thoroughly and lay the groundwork for subsequent model training, Exploratory Data Analysis (EDA) was conducted. Exploratory Data Analysis (EDA) is a crucial step to understand dataset characteristics. Employing Pandas, MatplotLib, and Plotly Visualizations, the initial exploration covered dataset shape, data types, and basic summary statistics. The exploration included data cleaning by addressing missing values and dropping unnecessary columns. Interactive Plotly visualizations provided insights into feature correlations and distributions. This multifaceted EDA set the stage for informed decisions in subsequent project stages.
+
+### 4.a Preliminary Exploration with Pandas
+Loaded the dataset from a CSV file located at the specified path `(C:\Users\13018\Downloads\matches.xls)`. The variable name assigned to this dataset is `matches`. 
+- `matches.shape` - provides the number of rows and columns in the matches dataset.
+- `matches.head()` - previewing the intial rows of the matches dataset.
+- `matches.dtypes` - determining the data types for each column in the matches dataset.
+- `matches.describe()` - provides key statistics for numerical columns, such as mean, standard deviation, and quartiles.
+- `matches.info()` - information about the dataset, including data types and non-null counts.
+- `neiss.isnull().sum()` - checking for the sum of missing values in each column, identifying areas that require cleaning.
+
+### 4.b Data Cleaning
+- The 'notes' column, found to be empty and unnecessary, is removed from the dataset.
+- Additionally, missing values in the 'attendance' column are filled with the average attendance value.
+- This series of steps ensures the dataset is prepared and free of missing values for subsequent analysis and modeling.
+
+### 4.c Data Visualisation
+Utilizing Plotly, the project explores dynamic and interactive visualizations to enhance the understanding of Premier League match winner predictions. The visualizations encompass diverse aspects, including team performance, historical trends, and key match statistics. Plotly enables the creation of informative charts and graphs that provide stakeholders with a comprehensive and engaging perspective on the data. This approach not only aids in uncovering patterns and insights but also facilitates effective communication of complex information, contributing to the overall success of the match winner prediction project.
+
+#### 4.c.1 Stacked Bar chart for Goals Scored at Home vs. Goals Scored Away by Team 
+
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(1).png" alt="Premier League Logo" style="width: 600px; height: 300px;">
+</p>
+Interpretation:
+Each bar in the stacked bar chart represents a football team, with the lower red portion indicating goals scored at home and the upper light blue portion for goals scored away. The x-axis displays team names, and the y-axis shows the total goals (combined home and away). Text annotations at the bar tops show the number of games played. This visualization facilitates comparison of home and away goal distribution, assessment of team performance in different match venues, and understanding strengths and weaknesses of football teams.
+
+#### 4.c.2 Sunburst chart for teams in different season based on the games won
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(8).png" alt="Premier League Logo" style="width: 600px; height: 300px;">
+</p>
+Interpretation:
+The sunburst chart hierarchically organizes data with outer rings representing seasons, inner rings for teams, and the final ring indicating goals scored. Each season segment is color-coded, and within it, team segments display the number of games won. Darker colors signify more wins. The size of each segment corresponds to the visualized value. This hierarchical visualization facilitates exploration of goals and wins by season and team. Selection of specific segments enables focused examination, and color-coded wins provide a rapid comparison of team performance across seasons.
+
+#### 4.c.3 Violin Plot of Possession Distribution
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(9).png" alt="Premier League Logo" style="width: 600px; height: 300px;">
+</p>
+Interpretation:
+The violin plot visually represents possession distribution across teams, with each violin representing a team's spread and central tendency. Wider sections indicate higher data density, and the horizontal line within signifies the median possession value. The accompanying "box" provides quartile information. This visualization aids in comparing possession distributions among teams, with broader violins indicating greater variability. Teams with higher median lines exhibit elevated median possession values. The "box" succinctly summarizes possession quartiles for each team.
+
+rest of the dat avisualisation can be found at .....
+
