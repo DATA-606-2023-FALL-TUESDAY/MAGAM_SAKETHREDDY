@@ -140,4 +140,49 @@ Interpretation:
 The violin plot visually represents possession distribution across teams, with each violin representing a team's spread and central tendency. Wider sections indicate higher data density, and the horizontal line within signifies the median possession value. The accompanying "box" provides quartile information. This visualization aids in comparing possession distributions among teams, with broader violins indicating greater variability. Teams with higher median lines exhibit elevated median possession values. The "box" succinctly summarizes possession quartiles for each team.
 
 rest of the dat avisualisation can be found at .....
+### 4.d Conversions
+- #### Created a binary target variable indicating a win (1) or not (0) `matches["target"] = (matches["result"] == "W").astype("int")`
 
+- #### Converted categorical variables (venue and opponent) to numerical codes `matches["venue_code"] = matches["venue"].astype("category").cat.codes` `matches["opp_code"] = matches["opponent"].astype("category").cat.codes`
+
+- #### Extracted the hour from the "time" column and converted it to integer `matches["hour"] = matches["time"].str.replace(":.+", "", regex=True).astype("int")`
+
+- #### Converted the "date" column to datetime format `matches["date"] = pd.to_datetime(matches["date"])`
+
+- #### Extracted the day of the week and converted it to numerical code `matches["day_code"] = matches["date"].dt.dayofweek`
+
+****
+
+>## *_5. Model Training _*
+
+### 5.1 Machine Learning Models
+- Random Forest (`RandomForestClassifier`)
+- Logistic Regression (`LogisticRegression`)
+- Support Vector Machine (SVM) (` SVC`)
+
+### Training Procedures
+- Employed an 80/20 train vs test split for model evaluation.
+### Performance Metrics
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+
+
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(13).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
+</p>
+### Model Enhancement Strategies
+1. Coefficient Interpretation
+   -  the coefficients represent the log-odds change in the probability of the dependent variable (target) being 1 for a one-unit increase in the corresponding independent variable, while holding other variables constant.
+   -  Exponentiating these coefficients provides the odds ratio, indicating the proportional change in odds for the given variable. 
+3. Feature Importance
+   - Assigned scores to input features based on their predictive utility.
+   - Aided in model improvement and interpretation.
+## 6. Model Results - Accuracy
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(14).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
+</p><p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(15).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
+</p>
