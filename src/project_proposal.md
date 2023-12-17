@@ -26,7 +26,7 @@ The project, _Premier League Match Winners Prediction_, centers around the devel
 ### 2.b Research Questions:
 The following research questions guide the project
 - Can historical match data accurately predict the outcomes of future Premier League matches?
-- To what extent can past match data, including team performance, player statistics, and historical trends, inform predictions?
+- To what extent can past match data, including team performance, and historical trends, inform predictions?
 - Which machine learning algorithms and data features are most effective for match winner prediction in the Premier League?
 - Are there specific machine learning algorithms that outperform others in this context, and which features contribute significantly to prediction accuracy?
 - How can the predictive model be used to benefit football fans, sports analysts, and other stakeholders?
@@ -153,36 +153,72 @@ rest of the dat avisualisation can be found at .....
 
 ****
 
->## *_5. Model Training _*
 
-### 5.1 Machine Learning Models
+>## *_5. Model Training_*
+### 5.a Machine Learning Models
 - Random Forest (`RandomForestClassifier`)
 - Logistic Regression (`LogisticRegression`)
 - Support Vector Machine (SVM) (` SVC`)
 
-### Training Procedures
+### 5.b Training Procedures
 - Employed an 80/20 train vs test split for model evaluation.
-### Performance Metrics
+### 5.c Performance Metrics
 - Accuracy
 - Precision
 - Recall
 - F1-score
 
+ 
+>## *_6. Model Results_*
 
+### 6.a Metrics
+After applying football-related data to various machine learning models, including Random Forest, Logistic Regression, and Support Vector Machine (SVM), the predictive outcomes were obtained. These models were trained to forecast Premier League match winners based on features like team performance, historical trends, and player statistics. The evaluation metrics, including accuracy, precision, recall, F1-score, and AUC-ROC, were calculated to assess the performance of each model. The results provide insights into the effectiveness of the machine learning models in predicting football match outcomes which have been provided below.
 
 <p align="center">
   <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(13).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
 </p>
-### Model Enhancement Strategies
+
+Following the execution of my football-related code through machine learning models, an observation revealed that the Random Forest model exhibited overfitting tendencies. Despite achieving high accuracy during training, the model struggled with generalization to new data, suggesting a need for further optimization and potential feature adjustments to address overfitting issues as presented below.
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(17).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
+</p>
+
+### 6.b Model Enhancement Strategies
 1. Coefficient Interpretation
-   -  the coefficients represent the log-odds change in the probability of the dependent variable (target) being 1 for a one-unit increase in the corresponding independent variable, while holding other variables constant.
-   -  Exponentiating these coefficients provides the odds ratio, indicating the proportional change in odds for the given variable. 
-3. Feature Importance
+   -  In logistic regression, the coefficients represent the log-odds change in the probability of the dependent variable (target) being 1 for a one-unit increase in the corresponding independent variable, while holding other variables constant.
+   -  Exponentiating these coefficients provides the odds ratio, indicating the proportional change in odds for the given variable.
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(15).png" alt="Premier League Logo" style="width: 800px; height: 200px;">
+</p>
+
+<p align="center">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(18).png" alt="Premier League Logo" style="width: 800px; height: 200px;">
+</p>
+
+2. Feature Importance
    - Assigned scores to input features based on their predictive utility.
    - Aided in model improvement and interpretation.
-## 6. Model Results - Accuracy
+   - Utilizing the Random Forest model, feature importance analysis was conducted to discern the most influential factors affecting the predictions. 
+   
 <p align="center">
-  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(14).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
-</p><p align="center">
-  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(15).png" alt="Premier League Logo" style="width: 700px; height: 200px;">
+  <img src="https://github.com/saketh105/saketh105/blob/main/newplot%20(14).png" alt="Premier League Logo" style="width: 800px; height: 200px;">
 </p>
+
+>## *_7. Research Queations Answered_*
+1.Can historical match data accurately predict the outcomes of future Premier League matches?
+- Depending on the complexity of factors influencing the game, while historical data provides valuable insights, the inherent unpredictability of football makes accurate predictions, and also has few challenges. 
+
+2. To what extent can past match data, including team performance, and historical trends, inform predictions?
+- Past match data, encompassing team performance, and historical trends, can offer substantial information for predictions. However, the prediction and feature importances show that these metrics have great impact.
+
+3. Which machine learning algorithms and data features are most effective for match winner prediction in the Premier League?
+- Machine learning algorithms such as Random Forest, Logistic Regression, and SVM, along with features like goals for (gf), goals against (ga), and expected goals (xg), prove effective for match winner prediction in the Premier League. 
+
+4. Are there specific machine learning algorithms that outperform others in this context, and which features contribute significantly to prediction accuracy?
+- Specific machine learning algorithms may outperform others based on the unique characteristics of the data. For instance, Random Forest excels at handling complexity, while Logistic Regression provides interpretability. The significance of features like goals for and against contributes significantly to prediction accuracy. However, random forest showed overfitting tendencies.
+
+5. How can the predictive model be used to benefit football fans, sports analysts, and other stakeholders?
+- The predictive model benefits football fans, sports analysts, and stakeholders by enhancing fan experience through informed insights into match outcomes. It provides a data-driven approach for understanding team performance and trends, aiding analysts in making informed predictions and supporting stakeholders in strategic decision-making.
+
+6. In what ways can the model's predictions be applied to enhance the experience of Premier League enthusiasts, provide actionable insights, and support decision-making?
+- The model's predictions can be applied to enhance the Premier League experience by providing enthusiasts with data-driven insights, facilitating informed betting decisions, and supporting sports analysts in creating engaging content. Additionally, stakeholders can use the predictions to optimize marketing strategies and sponsorship decisions based on anticipated match outcomes.
