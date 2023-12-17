@@ -94,8 +94,13 @@ _The data types may require further validation depending on the altercation of t
 ###Target and Features:
 For our machine learning model, we will typically structure our dataset as follows:
 1. **Target/Label:** The target variable will be a binary classification variable representing the match outcome (e.g., \"Home Team Win\" or \"Away Team Win\").
-2. **Features/Predictors:** Potential features for our machine learning model may include Venue, opponent, time, date, various match-related statistics, performance indicators. The specific choice of features and target variable will be refined during the data preprocessing and model development stages of the project based on their relevance and performance in predicting match outcomes.
-3. ** Machine Learning Models:** The Machine Learning Models will depend on the specific goals and tasks you want to accomplish with your data as we progress through the project.
+2. **Features/Predictors:**  `gf` (goals for), `ga` (goals against), `xg` (expected goals), `xga` (expected goals against), `poss` (possession)
+- These features encompass a range of information related to the venue, opposition, timing, team performance, and other match characteristics, providing a comprehensive set of variables for your machine learning model in the football-related project.
+3. **Machine Learning Models:**
+- Random Forest
+- Logistic Regression
+- Support Vector Machine (SVM)
+These models were selected to assess their performance in predicting Premier League match winners based on the provided features.
 ***
 >## *_4. Exploratory Data Analysis (EDA)_*
 To comprehend the dataset thoroughly and lay the groundwork for subsequent model training, Exploratory Data Analysis (EDA) was conducted. Exploratory Data Analysis (EDA) is a crucial step to understand dataset characteristics. Employing Pandas, MatplotLib, and Plotly Visualizations, the initial exploration covered dataset shape, data types, and basic summary statistics. The exploration included data cleaning by addressing missing values and dropping unnecessary columns. Interactive Plotly visualizations provided insights into feature correlations and distributions. This multifaceted EDA set the stage for informed decisions in subsequent project stages.
@@ -141,16 +146,16 @@ The violin plot visually represents possession distribution across teams, with e
 
 rest of the dat avisualisation can be found at .....
 ### 4.d Conversions
-- #### Created a binary target variable indicating a win (1) or not (0) `matches["target"] = (matches["result"] == "W").astype("int")`
+- Created a binary target variable indicating a win (1) or not (0) `matches["target"] = (matches["result"] == "W").astype("int")`
 
-- #### Converted categorical variables (venue and opponent) to numerical codes `matches["venue_code"] = matches["venue"].astype("category").cat.codes` `matches["opp_code"] = matches["opponent"].astype("category").cat.codes`
+-  Converted categorical variables (venue and opponent) to numerical codes `matches["venue_code"] = matches["venue"].astype("category").cat.codes` `matches["opp_code"] = matches["opponent"].astype("category").cat.codes`
 
-- #### Extracted the hour from the "time" column and converted it to integer `matches["hour"] = matches["time"].str.replace(":.+", "", regex=True).astype("int")`
+-  Extracted the hour from the "time" column and converted it to integer `matches["hour"] = matches["time"].str.replace(":.+", "", regex=True).astype("int")`
 
-- #### Converted the "date" column to datetime format `matches["date"] = pd.to_datetime(matches["date"])`
+-  Converted the "date" column to datetime format `matches["date"] = pd.to_datetime(matches["date"])`
 
-- #### Extracted the day of the week and converted it to numerical code `matches["day_code"] = matches["date"].dt.dayofweek`
-
+-  Extracted the day of the week and converted it to numerical code `matches["day_code"] = matches["date"].dt.dayofweek`
+- `venue_code`, `opp_code`, `hour`, `day_code`, will be added to the features.
 ****
 
 
@@ -222,3 +227,29 @@ Following the execution of my football-related code through machine learning mod
 
 6. In what ways can the model's predictions be applied to enhance the experience of Premier League enthusiasts, provide actionable insights, and support decision-making?
 - The model's predictions can be applied to enhance the Premier League experience by providing enthusiasts with data-driven insights, facilitating informed betting decisions, and supporting sports analysts in creating engaging content. Additionally, stakeholders can use the predictions to optimize marketing strategies and sponsorship decisions based on anticipated match outcomes.
+
+>## *_8. Conclusion_*
+In conclusion, this project aimed to leverage historical football match data to predict Premier League outcomes using machine learning models. The exploration involved the application of Random Forest, Logistic Regression, and SVM, with a focus on features like team performance and historical trends. While Random Forest demonstrated exceptional accuracy, it also exhibited overfitting tendencies, highlighting the importance of model optimization.
+
+The evaluation metrics, including accuracy, precision, recall, F1-score, and AUC-ROC, provided a comprehensive assessment of each model's performance. Logistic Regression, despite slightly lower accuracy, demonstrated robust precision, recall, and F1-score. On the other hand, SVM faced challenges in achieving satisfactory metrics.
+
+The predictive model holds potential benefits for football enthusiasts, analysts, and stakeholders by offering data-driven insights into match outcomes. Despite the overfitting observed in the Random Forest model, this project serves as a foundation for further refinements and improvements. Future work could involve additional feature engineering, hyperparameter tuning, and the exploration of alternative models to enhance prediction accuracy and generalization. Overall, the project contributes valuable insights into the application of machine learning in football outcome predictions, laying the groundwork for continued research and refinement.
+
+>## *_9. Future research_*
+1. **Feature Engineering Exploration:** Delve into the identification of supplementary features or the derivation of novel ones, aiming to augment the models' predictive capabilities.
+
+2. **Optimization of Hyperparameters:** Extend efforts in refining the hyperparameters of the machine learning models, striving for heightened generalization performance.
+
+3. **Ensemble Methodology Investigation:** Explore the application of ensemble methods, amalgamating predictions from diverse models to potentially amplify overall accuracy and resilience.
+
+4. **Temporal Analysis through Time-Series Techniques:** Consider the integration of time-series analysis techniques to capture temporal patterns and trends inherent in football performance data.
+
+5. **Incorporation of Player-Specific Metrics:** Include metrics and statistics specific to individual players, providing insights into their distinct impact on match outcomes.
+
+6. **Introduction of External Factors:** Integrate external factors like weather conditions, player injuries, or team dynamics, acknowledging their potential influence on match results.
+
+7. **Exploration of Advanced Models:** Experiment with more sophisticated machine learning models or delve into deep learning architectures to unveil intricate patterns within the football dataset.
+
+8. **Cross-League Prediction Scope:** Expand the prediction scope to encompass matches from diverse football leagues, evaluating the model's adaptability across different competitive landscapes.
+
+These research pathways are poised to contribute to the refinement and fortification of predictive models, aligning with academic rigor and inquiry.
