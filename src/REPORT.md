@@ -12,8 +12,8 @@
    - <a href="https://github.com/saketh105"><img align="left" src="https://img.shields.io/badge/-GitHub-181717?logo=github&style=flat" alt="icon | GitHub"/></a>
 
 #### Project Resources:
-   -  <a href="https://github.com/DATA-606-2023-FALL-TUESDAY/MAGAM_SAKETHREDDY/edit/main/src/project_proposal.md"><img src="https://img.shields.io/badge/-PowerPoint Presentation-B7472A?logo=microsoftpowerpoint&style=flat" alt="icon | GitHub"/></a>  
-   - <a href="https://youtube.com"><img align="left" src="https://img.shields.io/badge/-YouTube-FF0000?logo=youtube&style=flat" alt="icon | YouTube"/></a> 
+   -  <a href="https://github.com/DATA-606-2023-FALL-TUESDAY/MAGAM_SAKETHREDDY/blob/main/data/saketh.pptx"><img src="https://img.shields.io/badge/-PowerPoint Presentation-B7472A?logo=microsoftpowerpoint&style=flat" alt="icon | GitHub"/></a>  
+   - <a href="https://youtu.be/V5oO9iWJ-Bc"><img align="left" src="https://img.shields.io/badge/-YouTube-FF0000?logo=youtube&style=flat" alt="icon | YouTube"/></a> 
 ****
 > ## *_2. Project Focus_*
 
