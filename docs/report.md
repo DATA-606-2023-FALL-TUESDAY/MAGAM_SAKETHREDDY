@@ -144,7 +144,7 @@ The sunburst chart hierarchically organizes data with outer rings representing s
 Interpretation:
 The violin plot visually represents possession distribution across teams, with each violin representing a team's spread and central tendency. Wider sections indicate higher data density, and the horizontal line within signifies the median possession value. The accompanying "box" provides quartile information. This visualization aids in comparing possession distributions among teams, with broader violins indicating greater variability. Teams with higher median lines exhibit elevated median possession values. The "box" succinctly summarizes possession quartiles for each team.
 
-rest of the dat avisualisation can be found at  - website: [Plotly_charts](docs/plotly_charts.md)
+rest of the dat avisualisation can be found at  - website: [Plotly_charts](https://github.com/DATA-606-2023-FALL-TUESDAY/MAGAM_SAKETHREDDY/blob/main/docs/plotly_charts.md)
 ### 4.d Conversions
 - Created a binary target variable indicating a win (1) or not (0) `matches["target"] = (matches["result"] == "W").astype("int")`
 
